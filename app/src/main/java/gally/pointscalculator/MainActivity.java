@@ -8,7 +8,7 @@ public class MainActivity extends AppCompatActivity {
 
     final int[] higher = {100, 88, 77, 66, 56, 46, 37, 0};
     final int[] ordinary = {56, 46, 37, 28, 20, 12, 0, 0};
-    int[] user_six = {1, 4, 776, 34, 2 ,34, 6};
+    int[] user_six = {1, 4, 776, 34, 2 ,71, 6};
     int points = 0;
     int subjects_entered = 0;
     int previous = 0;
@@ -18,14 +18,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         update();
-        Log.e("Hello", "lmao");
+        Log.e("HPoints", Integer.toString(points));
     }
 
     public void update()
     {
         String test = Integer.toString(higher[2]);
         Log.d("swag", test);
+        calculate(21);
+    }
+
+    public void calculate(int value)
+    {
+        user_six[subjects_entered] = value;
+        previous = value;
+        subjects_entered++;
         sort();
+        for (int i = 0; i < 6; i++)
+        {
+            points += user_six[i];
+        }
     }
 
     public void sort()
