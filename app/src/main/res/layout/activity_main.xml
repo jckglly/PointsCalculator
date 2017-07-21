@@ -11,9 +11,11 @@
         android:id="@+id/Points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:text="Points: 69" />
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:text="Points: 69"
+        android:textSize="36sp" />
 
     <Button
         android:id="@+id/H1"
@@ -30,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/H1"
         android:layout_centerHorizontal="true"
-        android:layout_toRightOf="@+id/H1"
+        android:onClick="onButtonTap"
         android:text="H2" />
 
     <Button
@@ -38,18 +40,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/H2"
-        android:layout_toRightOf="@+id/H2"
-        android:layout_toEndOf="@+id/H2"
+        android:layout_toEndOf="@+id/Points"
+        android:onClick="onButtonTap"
         android:text="H3" />
 
     <Button
         android:id="@+id/H4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_below="@+id/H1"
-        android:layout_centerHorizontal="true"
         android:layout_toStartOf="@+id/Points"
+        android:onClick="onButtonTap"
         android:text="H4" />
 
     <Button
@@ -58,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/H4"
         android:layout_centerHorizontal="true"
-        android:layout_toRightOf="@+id/H4"
+        android:onClick="onButtonTap"
         android:text="H5" />
 
     <Button
@@ -66,8 +67,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/H5"
-        android:layout_toRightOf="@+id/H5"
-        android:layout_toEndOf="@+id/H5"
+        android:layout_toEndOf="@+id/Points"
+        android:onClick="onButtonTap"
         android:text="H6" />
 
     <Button
@@ -75,8 +76,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/H4"
-        android:layout_centerHorizontal="true"
         android:layout_toStartOf="@+id/Points"
+        android:onClick="onButtonTap"
         android:text="H7" />
 
     <Button
@@ -85,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/H7"
         android:layout_centerHorizontal="true"
-        android:layout_toRightOf="@+id/H7"
+        android:onClick="onButtonTap"
         android:text="H8" />
 
     <Button
@@ -93,8 +94,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/H8"
-        android:layout_toRightOf="@+id/H8"
-        android:layout_toEndOf="@+id/H8"
+        android:layout_toEndOf="@+id/Points"
+        android:onClick="onButtonTap"
         android:text="undo" />
 
     <Button
@@ -102,9 +103,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/H7"
-        android:layout_centerHorizontal="true"
         android:layout_toStartOf="@+id/Points"
-        android:text="reset" />
+        android:onClick="onButtonTap"
+        android:text="reset&#10;" />
 
     <Button
         android:id="@+id/HL"
@@ -112,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/reset"
         android:layout_centerHorizontal="true"
-        android:layout_toRightOf="@+id/reset"
+        android:onClick="onButtonTap"
         android:text="Higher&#10;Level" />
 
     <Button
@@ -120,8 +121,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/HL"
-        android:layout_toRightOf="@+id/HL"
-        android:layout_toEndOf="@+id/H8"
+        android:layout_toEndOf="@+id/Points"
+        android:onClick="onButtonTap"
         android:text="Higher&#10;Maths" />
 
 
