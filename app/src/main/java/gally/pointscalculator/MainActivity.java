@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void reset()
+    public void reset_func()
     {
         user_six = null;
         points = 0;
@@ -81,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
 
             Toast myToast = Toast.makeText(getApplicationContext(), Integer.toString(higher[0]), Toast.LENGTH_SHORT);
             myToast.show();
+        }
+
+        if(v.getId() == R.id.reset) {
+
+            Toast myToast = Toast.makeText(getApplicationContext(), "Reset", Toast.LENGTH_SHORT);
+            myToast.show();
+            reset_func();
+            Log.e("RESET", Integer.toString(points));
         }
     }
 
