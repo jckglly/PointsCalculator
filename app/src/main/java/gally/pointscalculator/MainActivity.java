@@ -3,6 +3,8 @@ package gally.pointscalculator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,6 +73,15 @@ public class MainActivity extends AppCompatActivity {
         points = 0;
         subjects_entered = 0;
         previous = 0;
+    }
+
+    public void onButtonTap(View v) {
+
+        if(v.getId() == R.id.H1) {
+
+            Toast myToast = Toast.makeText(getApplicationContext(), Integer.toString(higher[0]), Toast.LENGTH_SHORT);
+            myToast.show();
+        }
     }
 
 

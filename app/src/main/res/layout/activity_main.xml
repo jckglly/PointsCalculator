@@ -19,10 +19,9 @@
         android:id="@+id/H1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_below="@+id/Points"
-        android:layout_centerHorizontal="true"
         android:layout_toStartOf="@+id/Points"
+        android:onClick="onButtonTap"
         android:text="H1" />
 
     <Button
