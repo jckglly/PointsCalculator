@@ -1,96 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="gally.pointscalculator.MainActivity">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="H4"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="231dp"
-        tools:text="H4" />
 
     <TextView
+        android:id="@+id/Points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="441dp"
-        android:text="Points Baby: 625"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:text="Points: 69" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/H1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Higher"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="312dp"
-        tools:text="H1" />
+
+        android:layout_below="@+id/Points"
+        android:layout_centerHorizontal="true"
+        android:layout_toStartOf="@+id/Points"
+        android:text="H1" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/H2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="312dp"
-        tools:text="H1" />
+        android:layout_alignTop="@+id/H1"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/H1"
+        android:text="H2" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/H3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="312dp"
-        tools:text="H1" />
+        android:layout_alignTop="@+id/H2"
+        android:layout_toRightOf="@+id/H2"
+        android:layout_toEndOf="@+id/H2"
+        android:text="H3" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/H4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="231dp"
-        tools:text="H1" />
+
+        android:layout_below="@+id/H1"
+        android:layout_centerHorizontal="true"
+        android:layout_toStartOf="@+id/Points"
+        android:text="H4" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/H5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="H5"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="231dp" />
+        android:layout_alignTop="@+id/H4"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/H4"
+        android:text="H5" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/H6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="142dp"
-        tools:text="H1" />
+        android:layout_alignTop="@+id/H5"
+        android:layout_toRightOf="@+id/H5"
+        android:layout_toEndOf="@+id/H5"
+        android:text="H6" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/H7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="H2"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="142dp" />
+        android:layout_below="@+id/H4"
+        android:layout_centerHorizontal="true"
+        android:layout_toStartOf="@+id/Points"
+        android:text="H7" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/H8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="H3"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="142dp" />
+        android:layout_alignTop="@+id/H7"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/H7"
+        android:text="H8" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/undo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/H8"
+        android:layout_toRightOf="@+id/H8"
+        android:layout_toEndOf="@+id/H8"
+        android:text="undo" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/H7"
+        android:layout_centerHorizontal="true"
+        android:layout_toStartOf="@+id/Points"
+        android:text="reset" />
+
+    <Button
+        android:id="@+id/HL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/reset"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/reset"
+        android:text="Higher&#10;Level" />
+
+    <Button
+        android:id="@+id/HM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/HL"
+        android:layout_toRightOf="@+id/HL"
+        android:layout_toEndOf="@+id/H8"
+        android:text="Higher&#10;Maths" />
+
+
+</android.widget.RelativeLayout>
