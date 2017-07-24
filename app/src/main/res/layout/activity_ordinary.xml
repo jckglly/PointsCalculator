@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/subjects"
-        android:layout_alignEnd="@+id/H3"
+        android:layout_alignEnd="@+id/O3"
         android:layout_marginBottom="39dp"
         android:fontFamily="sans-serif"
         android:text="0"
@@ -25,111 +25,110 @@
         android:textSize="60sp"
         android:layout_alignBaseline="@+id/Points"
         android:layout_alignBottom="@+id/Points"
-        android:layout_alignStart="@+id/H1" />
+        android:layout_alignStart="@+id/O1" />
 
     <Button
-        android:id="@+id/H2"
+        android:id="@+id/O2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/H1"
-        android:layout_alignBottom="@+id/H1"
-        android:layout_alignStart="@+id/H5"
-        android:background="?android:attr/colorEdgeEffect"
+        android:layout_alignBottom="@+id/O1"
+        android:layout_alignStart="@+id/O5"
+        android:background="@color/colorAccent"
         android:onClick="onButtonTap"
-        android:text="H2"
+        android:text="O2"
         android:textColor="@android:color/background_light" />
 
     <Button
-        android:id="@+id/H1"
+        android:id="@+id/O1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@id/H2"
         android:layout_marginRight="20dp"
-        android:background="?android:attr/colorEdgeEffect"
+        android:layout_toLeftOf="@id/O2"
+        android:background="@color/colorAccent"
         android:onClick="onButtonTap"
-        android:text="H1"
+        android:text="O1"
         android:textColor="@android:color/background_light" />
 
     <Button
-        android:id="@+id/H3"
+        android:id="@+id/O3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="?android:attr/colorEdgeEffect"
-        android:layout_toRightOf="@id/H2"
+        android:layout_alignTop="@+id/O2"
         android:layout_marginLeft="20dp"
-        android:layout_alignTop="@+id/H2"
+        android:layout_toRightOf="@id/O2"
+        android:background="@color/colorAccent"
         android:onClick="onButtonTap"
-        android:text="H3"
-        android:textColor="@android:color/background_light"
-        />
+        android:text="O3"
+        android:textColor="@android:color/background_light" />
 
     <Button
-        android:id="@+id/H4"
+        android:id="@+id/O4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/H1"
-        android:layout_marginTop="20dp"
-        android:layout_toLeftOf="@id/H2"
+        android:layout_below="@+id/O1"
         android:layout_marginRight="20dp"
-        android:background="?android:attr/colorEdgeEffect"
+        android:layout_marginTop="20dp"
+        android:layout_toLeftOf="@id/O2"
+        android:background="@color/colorAccent"
         android:onClick="onButtonTap"
-        android:text="H4"
+        android:text="O4"
         android:textColor="@android:color/background_light" />
 
     <Button
-        android:id="@+id/H5"
+        android:id="@+id/O5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/H4"
+        android:layout_alignTop="@+id/O4"
         android:layout_centerHorizontal="true"
-        android:background="?android:attr/colorEdgeEffect"
+        android:background="@color/colorAccent"
         android:onClick="onButtonTap"
-        android:text="H5"
+        android:text="O5"
         android:textColor="@android:color/background_light" />
 
     <Button
-        android:id="@+id/H6"
+        android:id="@+id/O6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/H5"
-        android:layout_toRightOf="@id/H5"
+        android:layout_alignTop="@+id/O5"
         android:layout_marginLeft="20dp"
-        android:background="?android:attr/colorEdgeEffect"
+        android:layout_toRightOf="@id/O5"
+        android:background="@color/colorAccent"
         android:onClick="onButtonTap"
-        android:text="H6"
+        android:text="O6"
         android:textColor="@android:color/background_light" />
 
     <Button
-        android:id="@+id/H7"
+        android:id="@+id/O7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/H4"
-        android:layout_marginTop="20dp"
-        android:layout_toLeftOf="@id/H2"
+        android:layout_below="@+id/O4"
         android:layout_marginRight="20dp"
-        android:background="?android:attr/colorEdgeEffect"
+        android:layout_marginTop="20dp"
+        android:layout_toLeftOf="@id/O2"
+        android:background="@color/colorAccent"
         android:onClick="onButtonTap"
-        android:text="H7"
+        android:text="O7"
         android:textColor="@android:color/background_light" />
 
     <Button
-        android:id="@+id/H8"
+        android:id="@+id/O8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/H7"
+        android:layout_alignTop="@+id/O7"
         android:layout_centerHorizontal="true"
-        android:background="?android:attr/colorEdgeEffect"
+        android:background="@color/colorAccent"
         android:onClick="onButtonTap"
-        android:text="H8"
+        android:text="O8"
         android:textColor="@android:color/background_light" />
 
     <Button
         android:id="@+id/undo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/H8"
-        android:layout_toRightOf="@id/H2"
+        android:layout_alignTop="@+id/O8"
+        android:layout_toRightOf="@id/O2"
         android:layout_marginLeft="20dp"
         android:background="?android:attr/colorEdgeEffect"
         android:onClick="onButtonTap"
@@ -140,9 +139,9 @@
         android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/H7"
+        android:layout_below="@+id/O7"
         android:layout_marginTop="20dp"
-        android:layout_toLeftOf="@id/H2"
+        android:layout_toLeftOf="@id/O2"
         android:layout_marginRight="20dp"
         android:background="?android:attr/colorEdgeEffect"
         android:onClick="onButtonTap"
@@ -150,22 +149,22 @@
         android:textColor="@android:color/background_light" />
 
     <Button
-        android:id="@+id/HL"
+        android:id="@+id/OL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/reset"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:onClick="onButtonTap"
-        android:text="Higher&#10;Level"
+        android:text="Ordinary&#10;Level"
         android:textColor="@android:color/background_light" />
 
     <Button
         android:id="@+id/HM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/HL"
-        android:layout_toRightOf="@id/H2"
+        android:layout_alignTop="@+id/OL"
+        android:layout_toRightOf="@id/O2"
         android:layout_marginLeft="20dp"
         android:background="?android:attr/colorEdgeEffect"
         android:onClick="onButtonTap"
@@ -177,9 +176,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Number of Subjects entered: 0"
-        android:layout_above="@+id/H1"
+        android:layout_above="@+id/O1"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="11dp" />
-
 
 </android.widget.RelativeLayout>
