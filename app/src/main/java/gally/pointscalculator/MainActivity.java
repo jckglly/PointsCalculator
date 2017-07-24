@@ -225,12 +225,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        if(v.getId() == R.id.reset) {
-
-            Toast myToast = Toast.makeText(getApplicationContext(), "Reset", Toast.LENGTH_SHORT);
-            myToast.show();
-            reset_func();
-            Log.e("RESET", Integer.toString(points));
-        }
+//        if(v.getId() == R.id.reset) {
+//
+//            Toast myToast = Toast.makeText(getApplicationContext(), "Reset", Toast.LENGTH_SHORT);
+//            myToast.show();
+//            reset_func();
+//            Log.e("RESET", Integer.toString(points));
+//        }
     }
 }

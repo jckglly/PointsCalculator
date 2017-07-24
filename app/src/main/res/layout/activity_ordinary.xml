@@ -130,10 +130,8 @@
         android:layout_alignTop="@+id/O8"
         android:layout_toRightOf="@id/O2"
         android:layout_marginLeft="20dp"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="undo"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/undo_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/reset"
@@ -143,10 +141,8 @@
         android:layout_marginTop="20dp"
         android:layout_toLeftOf="@id/O2"
         android:layout_marginRight="20dp"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="reset&#10;"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/reset_btn"
+        android:onClick="onButtonTap"  />
 
     <Button
         android:id="@+id/OL"
@@ -166,10 +162,8 @@
         android:layout_alignTop="@+id/OL"
         android:layout_toRightOf="@id/O2"
         android:layout_marginLeft="20dp"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="Higher&#10;Maths"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/hm_btn"
+        android:onClick="onButtonTap" />
 
     <TextView
         android:id="@+id/subjects"

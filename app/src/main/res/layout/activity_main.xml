@@ -34,10 +34,9 @@
         android:layout_alignBaseline="@+id/H1"
         android:layout_alignBottom="@+id/H1"
         android:layout_alignStart="@+id/H5"
-        android:background="?android:attr/colorEdgeEffect"
+        android:background="@drawable/h2_btn"
         android:onClick="onButtonTap"
-        android:text="H2"
-        android:textColor="@android:color/background_light" />
+         />
 
     <Button
         android:id="@+id/H1"
@@ -46,22 +45,19 @@
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@id/H2"
         android:layout_marginRight="20dp"
-        android:background="?android:attr/colorEdgeEffect"
+        android:background="@drawable/h1_btn"
         android:onClick="onButtonTap"
-        android:text="H1"
-        android:textColor="@android:color/background_light" />
+        />
 
     <Button
         android:id="@+id/H3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="?android:attr/colorEdgeEffect"
         android:layout_toRightOf="@id/H2"
         android:layout_marginLeft="20dp"
         android:layout_alignTop="@+id/H2"
+        android:background="@drawable/h3_btn"
         android:onClick="onButtonTap"
-        android:text="H3"
-        android:textColor="@android:color/background_light"
         />
 
     <Button
@@ -72,10 +68,8 @@
         android:layout_marginTop="20dp"
         android:layout_toLeftOf="@id/H2"
         android:layout_marginRight="20dp"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="H4"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/h4_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/H5"
@@ -83,10 +77,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/H4"
         android:layout_centerHorizontal="true"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="H5"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/h5_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/H6"
@@ -95,10 +87,8 @@
         android:layout_alignTop="@+id/H5"
         android:layout_toRightOf="@id/H5"
         android:layout_marginLeft="20dp"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="H6"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/h6_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/H7"
@@ -108,10 +98,8 @@
         android:layout_marginTop="20dp"
         android:layout_toLeftOf="@id/H2"
         android:layout_marginRight="20dp"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="H7"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/h7_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/H8"
@@ -119,10 +107,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/H7"
         android:layout_centerHorizontal="true"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="H8"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/h8_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/undo"
@@ -131,10 +117,8 @@
         android:layout_alignTop="@+id/H8"
         android:layout_toRightOf="@id/H2"
         android:layout_marginLeft="20dp"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="undo"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/undo_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/reset"
@@ -144,10 +128,8 @@
         android:layout_marginTop="20dp"
         android:layout_toLeftOf="@id/H2"
         android:layout_marginRight="20dp"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="reset&#10;"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/reset_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/HL"
@@ -155,10 +137,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/reset"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimary"
-        android:onClick="onButtonTap"
-        android:text="Higher&#10;Level"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/hl_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/HM"
@@ -167,10 +147,8 @@
         android:layout_alignTop="@+id/HL"
         android:layout_toRightOf="@id/H2"
         android:layout_marginLeft="20dp"
-        android:background="?android:attr/colorEdgeEffect"
-        android:onClick="onButtonTap"
-        android:text="Higher&#10;Maths"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/hm_btn"
+        android:onClick="onButtonTap" />
 
     <TextView
         android:id="@+id/subjects"
