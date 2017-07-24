@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
                 setViews();
                 break;
             case R.id.reset:
-                reset();
+                reset_func();
                 setViews();
                 Toast myToast = Toast.makeText(getApplicationContext(), "Reset!", Toast.LENGTH_SHORT);
                 myToast.show();
