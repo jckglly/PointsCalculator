@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     TextView points_view;
     TextView subjects_view;
     boolean undo_lock = false; //if true undo can be executed
+    int temp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         undo_lock = false;
         if(user_six[5] < value && subjects_entered < 6) {
 
+            temp = user_six[5];
             user_six[subjects_entered] = value;
             previous = value;
             subjects_entered++;
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else if(user_six[5] < value){
 
+            temp = user_six[5];
             user_six[5] = value;
             previous = value;
             subjects_entered++;
@@ -114,8 +117,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void undo_func()
     {
-        points -= previous;
         if (subjects_entered > 0 && undo_lock == false) {
+            if (previous > user_six[5]) {
+                points -= previous;
+            }
             subjects_entered--;
             previous = 0;
             undo_lock = true;
