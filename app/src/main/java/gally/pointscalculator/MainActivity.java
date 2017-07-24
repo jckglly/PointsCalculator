@@ -125,6 +125,16 @@ public class MainActivity extends AppCompatActivity {
             previous = 0;
             undo_lock = true;
         }
+        if (subjects_entered > 6 && undo_lock == false && previous > temp)
+        {
+            if (previous > user_six[5]) {
+                points -= previous;
+                points += temp;
+            }
+            subjects_entered--;
+            previous = 0;
+            undo_lock = true;
+        }
     }
 
     public void onButtonTap(View v) {
