@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     int previous = 0;
     TextView points_view;
     TextView subjects_view;
+    boolean undo_lock = false; //if true undo can be executed
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculate(int value)
     {
+        undo_lock = false;
         if(user_six[5] < value && subjects_entered < 6) {
 
             user_six[subjects_entered] = value;
@@ -108,6 +110,16 @@ public class MainActivity extends AppCompatActivity {
         points = 0;
         subjects_entered = 0;
         previous = 0;
+    }
+
+    public void undo_func()
+    {
+        points -= previous;
+        if (subjects_entered > 0 && undo_lock == false) {
+            subjects_entered--;
+            previous = 0;
+            undo_lock = true;
+        }
     }
 
     public void onButtonTap(View v) {
@@ -191,6 +203,10 @@ public class MainActivity extends AppCompatActivity {
                 setViews();
                 Toast myToast = Toast.makeText(getApplicationContext(), "Reset!", Toast.LENGTH_SHORT);
                 myToast.show();
+                break;
+            case R.id.undo:
+                undo_func();
+                setViews();
                 break;
         }
 
