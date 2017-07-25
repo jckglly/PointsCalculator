@@ -10,30 +10,46 @@ import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
     final int[] higher = {100, 88, 77, 66, 56, 46, 37, 0};
     final int[] ordinary = {56, 46, 37, 28, 20, 12, 0, 0};
-    int[] user_six = {0, 0, 0, 0, 0, 0, 0};
-    int [] temp_six;
+
+    Integer[] user_six = {0, 0, 0, 0, 0, 0, 0}; // highest 6 subjects values
+    Integer[] user_input = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // input values
+
     int points = 0;
     int subjects_entered = 0;
-    int previous = 0;
+    int undo_counter = 0;
+
     TextView points_view;
     TextView subjects_view;
-    boolean undo_lock = false; //if true undo can be executed
-    int temp_val;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        update();
-//        Log.e("HPoints", Integer.toString(points));
     }
 
     public void setViews() {
+
+        points = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            points += user_six[i];
+        }
+
+        for (int i = 0; i < 6; i++)
+        {
+            if((points == higher[i] || points == ordinary[i]) && subjects_entered != 1) {
+
+                subjects_entered = 1;
+            }
+        }
+
+        Log.e("POINTS: ", Integer.toString(points));
 
         points_view = (TextView) findViewById(R.id.Points);
         points_view.setText(Integer.toString(points));
@@ -42,101 +58,86 @@ public class MainActivity extends AppCompatActivity {
         subjects_view.setText("Number of Subjects entered: " + Integer.toString(subjects_entered));
     }
 
-//    public void update()
-//    {
-//        calculate(21);
-//    }
+    public void calculate(int value) {
 
-    public void calculate(int value)
-    {
-        undo_lock = false;
-        temp_six = user_six;
-        if(user_six[5] < value && subjects_entered < 6) {
+        for(int i = 0; i < user_input.length-1; i++) {
 
-            temp_val = user_six[5];
-            user_six[subjects_entered] = value;
-            previous = value;
-            subjects_entered++;
-            sort();
-            points = 0;
-
-            for (int i = 0; i < 6; i++)
-            {
-                points += user_six[i];
-            }
+                user_input[i] = user_input[i+1];
         }
-        else if(user_six[5] < value){
+        user_input[user_input.length-1] = value;
 
-            temp_val = user_six[5];
+        for (int i = 0; i < user_input.length; i++)
+        {
+           Log.e("user_input: ", i + " " + user_input[i]);
+        }
+
+        if(user_six[5] < value) {
+
             user_six[5] = value;
-            previous = value;
             subjects_entered++;
-            sort();
-            points = 0;
 
-            for (int i = 0; i < 6; i++)
-            {
-                points += user_six[i];
-            }
+            Arrays.sort(user_six, Collections.reverseOrder());
         }
         else {
             subjects_entered++; //to ensure subjects entered counter continues increasing
         }
     }
 
-    public void point_calc()
-    {
-        points = 0;
-        for (int i = 0; i < 6; i++)
-        {
-            points += temp_six[i];
-        }
-    }
-    public void sort()
-    {
-        int temp;
-        if (user_six == null)
-        {
-            return;
-        }
-        else
-        {
-            for (int i = 1; i < user_six.length; i++)
-            {
-                for (int j = 0; j < user_six.length - 1; j++)
-                if (user_six[j] < user_six[j + 1])
-                {
-                    temp = user_six[j];
-                    user_six[j] = user_six[j + 1];
-                    user_six[j + 1] = temp;
-                }
-            }
-        }
-        for (int i = 0; i < 6; i ++) {
-            Log.e("users six", Integer.toString(user_six[i]));
-            Log.e("Temp", Integer.toString(temp_six[i]));
-        }
-    }
-
     public void reset_func()
     {
         Arrays.fill(user_six, 0);
+        Arrays.fill(user_input, 0);
         points = 0;
         subjects_entered = 0;
-        previous = 0;
+        undo_counter = 0;
     }
 
-    public void undo_func()
-    {
-        if (subjects_entered > 0 && undo_lock == false) {
-            user_six = temp_six;
+    public void undo_func() {
+
+        if(undo_counter < 10) {
+
+            if(subjects_entered > 0) {
+
+                for(int i = 0; i < user_input.length; i++) {
+
+                    if(user_six[i] == user_input[user_input.length-1]) {
+
+                        user_six[i] = 0;
+                        Arrays.sort(user_six, Collections.reverseOrder());
+                        break;
+                    }
+                }
+
+                if(user_input[0] == 0) {
+
+                    for (int i = 13; i > 0; i--) {
+
+                        user_input[i] = user_input[i-1];
+                    }
+                }
+                else {
+
+                    for (int i = 13; i >= 1; i--) {
+
+                        user_input[i] = user_input[i-1];
+                    }
+                    user_input[0] = 0;
+                }
+
+                for (int i = 0; i < user_input.length; i++)
+                {
+                    Log.e("user_input: ", i + " " + user_input[i]);
+                }
+
+                subjects_entered--;
+            }
         }
-        subjects_entered--;
-        undo_lock = true;
-        point_calc();
-        points -= previous;
-        Log.e("points", Integer.toString(points));
-        setViews();
+        else {
+
+            Toast myToast = Toast.makeText(getApplicationContext(), "UNDO limit reached. Please RESET!", Toast.LENGTH_SHORT);
+            myToast.show();
+        }
+
     }
 
     public void onButtonTap(View v) {
@@ -222,18 +223,10 @@ public class MainActivity extends AppCompatActivity {
                 myToast.show();
                 break;
             case R.id.undo:
+                undo_counter++;
                 undo_func();
-                Log.e("points2", Integer.toString(points));
                 setViews();
                 break;
         }
-
-//        if(v.getId() == R.id.reset) {
-//
-//            Toast myToast = Toast.makeText(getApplicationContext(), "Reset", Toast.LENGTH_SHORT);
-//            myToast.show();
-//            reset_func();
-//            Log.e("RESET", Integer.toString(points));
-//        }
     }
 }
