@@ -16,13 +16,14 @@ public class MainActivity extends AppCompatActivity {
     final int[] higher = {100, 88, 77, 66, 56, 46, 37, 0};
     final int[] ordinary = {56, 46, 37, 28, 20, 12, 0, 0};
     int[] user_six = {0, 0, 0, 0, 0, 0, 0};
+    int [] temp_six;
     int points = 0;
     int subjects_entered = 0;
     int previous = 0;
     TextView points_view;
     TextView subjects_view;
     boolean undo_lock = false; //if true undo can be executed
-    int temp;
+    int temp_val;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
     public void calculate(int value)
     {
         undo_lock = false;
+        temp_six = user_six;
         if(user_six[5] < value && subjects_entered < 6) {
 
-            temp = user_six[5];
+            temp_val = user_six[5];
             user_six[subjects_entered] = value;
             previous = value;
             subjects_entered++;
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else if(user_six[5] < value){
 
-            temp = user_six[5];
+            temp_val = user_six[5];
             user_six[5] = value;
             previous = value;
             subjects_entered++;
@@ -82,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void point_calc()
+    {
+        points = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            points += temp_six[i];
+        }
+    }
     public void sort()
     {
         int temp;
@@ -104,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         }
         for (int i = 0; i < 6; i ++) {
             Log.e("users six", Integer.toString(user_six[i]));
+            Log.e("Temp", Integer.toString(temp_six[i]));
         }
     }
 
@@ -118,23 +129,14 @@ public class MainActivity extends AppCompatActivity {
     public void undo_func()
     {
         if (subjects_entered > 0 && undo_lock == false) {
-            if (previous > user_six[5]) {
-                points -= previous;
-            }
-            subjects_entered--;
-            previous = 0;
-            undo_lock = true;
+            user_six = temp_six;
         }
-        if (subjects_entered > 6 && undo_lock == false && previous > temp)
-        {
-            if (previous > user_six[5]) {
-                points -= previous;
-                points += temp;
-            }
-            subjects_entered--;
-            previous = 0;
-            undo_lock = true;
-        }
+        subjects_entered--;
+        undo_lock = true;
+        point_calc();
+        points -= previous;
+        Log.e("points", Integer.toString(points));
+        setViews();
     }
 
     public void onButtonTap(View v) {
@@ -221,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.undo:
                 undo_func();
+                Log.e("points2", Integer.toString(points));
                 setViews();
                 break;
         }
