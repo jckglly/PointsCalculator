@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context="gally.pointscalculator.MainActivity">
 
     <TextView
@@ -34,10 +35,8 @@
         android:layout_alignBaseline="@+id/H1"
         android:layout_alignBottom="@+id/O1"
         android:layout_alignStart="@+id/O5"
-        android:background="@color/colorAccent"
-        android:onClick="onButtonTap"
-        android:text="O2"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/o2_btn"
+        android:onClick="onButtonTap"/>
 
     <Button
         android:id="@+id/O1"
@@ -46,10 +45,8 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="20dp"
         android:layout_toLeftOf="@id/O2"
-        android:background="@color/colorAccent"
-        android:onClick="onButtonTap"
-        android:text="O1"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/o1_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/O3"
@@ -58,10 +55,8 @@
         android:layout_alignTop="@+id/O2"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@id/O2"
-        android:background="@color/colorAccent"
-        android:onClick="onButtonTap"
-        android:text="O3"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/o3_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/O4"
@@ -71,10 +66,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:layout_toLeftOf="@id/O2"
-        android:background="@color/colorAccent"
-        android:onClick="onButtonTap"
-        android:text="O4"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/o4_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/O5"
@@ -82,10 +75,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/O4"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
-        android:onClick="onButtonTap"
-        android:text="O5"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/o5_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/O6"
@@ -94,10 +85,8 @@
         android:layout_alignTop="@+id/O5"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@id/O5"
-        android:background="@color/colorAccent"
-        android:onClick="onButtonTap"
-        android:text="O6"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/o6_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/O7"
@@ -107,10 +96,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:layout_toLeftOf="@id/O2"
-        android:background="@color/colorAccent"
-        android:onClick="onButtonTap"
-        android:text="O7"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/o7_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/O8"
@@ -118,10 +105,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/O7"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
-        android:onClick="onButtonTap"
-        android:text="O8"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/o8_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/undo"
@@ -150,10 +135,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/reset"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
-        android:onClick="onButtonTap"
-        android:text="Ordinary&#10;Level"
-        android:textColor="@android:color/background_light" />
+        android:background="@drawable/ol_btn"
+        android:onClick="onButtonTap" />
 
     <Button
         android:id="@+id/HM"
