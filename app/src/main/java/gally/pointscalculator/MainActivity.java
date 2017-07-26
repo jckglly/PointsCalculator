@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     int subjects_entered = 0;
     int undo_counter = 0;
 
+    boolean bonus = false;
+
     TextView points_view;
     TextView subjects_view;
 
@@ -47,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
                 subjects_entered = 1;
             }
+        }
+        if (bonus == true)
+        {
+            points += 25;
         }
 
         Log.e("POINTS: ", Integer.toString(points));
@@ -83,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void maths_bonus()
+    {
+
+    }
+
     public void reset_func()
     {
         Arrays.fill(user_six, 0);
@@ -90,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         points = 0;
         subjects_entered = 0;
         undo_counter = 0;
+        bonus = false;
     }
 
     public void undo_func() {
@@ -227,6 +239,13 @@ public class MainActivity extends AppCompatActivity {
                 undo_func();
                 setViews();
                 break;
+            case R.id.HM:
+                bonus = true;
+                Toast bonusToast = Toast.makeText(getApplicationContext(), "Maths Bonus Added! +25", Toast.LENGTH_SHORT);
+                bonusToast.show();
+                setViews();
+                break;
+
         }
     }
 }
