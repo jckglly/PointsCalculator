@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     final int[] higher = {100, 88, 77, 66, 56, 46, 37, 0};
     final int[] ordinary = {56, 46, 37, 28, 20, 12, 0, 0};
 
-    Integer[] user_six = {0, 0, 0, 0, 0, 0, 0}; // highest 6 subjects values
+    Integer[] user_six = {0, 0, 0, 0, 0, 0}; // highest 6 subjects values
     Integer[] user_input = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // input values
 
     int points = 0;
@@ -78,11 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 user_input[i] = user_input[i+1];
         }
         user_input[user_input.length-1] = value;
-
-        for (int i = 0; i < user_input.length; i++)
-        {
-           Log.e("user_input: ", i + " " + user_input[i]);
-        }
 
         if(user_six[5] < value) {
 
@@ -142,12 +137,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     user_input[0] = 0;
                 }
-
-                for (int i = 0; i < user_input.length; i++)
-                {
-                    Log.e("user_input: ", i + " " + user_input[i]);
-                }
-
                 subjects_entered--;
             }
         }
@@ -158,6 +147,29 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+//    public void getNextHighest() {
+//
+//        for (int i = 0; i < user_six.length-1; i++) {
+//
+//            for (int j = user_input.length-1; j > 0; i++) {
+//
+//                for (int k = 0; k < user_input.length; k++)
+//                {
+//                    Log.e("user_input: ", k + " " + user_input[k]);
+//                }
+//                for (int l = 0; i < user_six.length; l++)
+//                {
+//                    Log.e("user_six: ", l + " " + user_six[l]);
+//                }
+//                if(user_input[j] > user_six[i]) {
+//
+//                    user_six[i] = user_input[j];
+//                    break;
+//                }
+//            }
+//        }
+//    }
 
     public void onButtonTap(View v) {
 
