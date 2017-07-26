@@ -1,3 +1,10 @@
+/*
+Authors: Jack Gallagher & Steve Martin
+Date: 26/7/17
+Description: A points calculator for the revised points system of the irish leaving cert. Written in java and xml using android studio. Jack and Steve are currently
+Computer Science students in UCD and DIT respectively.
+*/
+
 package gally.pointscalculator;
 
 import android.content.Intent;
@@ -110,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
             if(subjects_entered > 0) {
 
-                for(int i = 0; i < user_input.length; i++) {
+                for(int i = 0; i <= user_input.length; i++) {
 
                     if(user_six[i] == user_input[user_input.length-1]) {
 
