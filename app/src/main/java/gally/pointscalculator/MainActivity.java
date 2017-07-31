@@ -7,7 +7,6 @@ Computer Science students in UCD and DIT respectively.
 
 package gally.pointscalculator;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +14,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -57,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 subjects_entered = 1;
             }
         }
+
         if (bonus == true)
         {
             points += 25;
@@ -75,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         for(int i = 0; i < user_input.length-1; i++) {
 
-                user_input[i] = user_input[i+1];
+            user_input[i] = user_input[i+1];
         }
         user_input[user_input.length-1] = value;
 
@@ -91,11 +90,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void maths_bonus()
-    {
-
-    }
-
     public void reset_func()
     {
         Arrays.fill(user_six, 0);
@@ -108,68 +102,51 @@ public class MainActivity extends AppCompatActivity {
 
     public void undo_func() {
 
-        if(undo_counter < 10) {
+        try {
 
-            if(subjects_entered > 0) {
+            if(undo_counter < 10) {
 
-                for(int i = 0; i <= user_input.length; i++) {
+                if(subjects_entered > 0) {
 
-                    if(user_six[i] == user_input[user_input.length-1]) {
+                    for(int i = 0; i <= user_input.length; i++) {
 
-                        user_six[i] = 0;
-                        Arrays.sort(user_six, Collections.reverseOrder());
-                        break;
+                        if(user_six[i] == user_input[user_input.length-1]) {
+
+                            user_six[i] = 0;
+                            Arrays.sort(user_six, Collections.reverseOrder());
+                            break;
+                        }
                     }
-                }
 
-                if(user_input[0] == 0) {
+                    if(user_input[0] == 0) {
 
-                    for (int i = 13; i > 0; i--) {
+                        for (int i = 13; i > 0; i--) {
 
-                        user_input[i] = user_input[i-1];
+                            user_input[i] = user_input[i-1];
+                        }
                     }
-                }
-                else {
+                    else {
 
-                    for (int i = 13; i >= 1; i--) {
+                        for (int i = 13; i >= 1; i--) {
 
-                        user_input[i] = user_input[i-1];
+                            user_input[i] = user_input[i-1];
+                        }
+                        user_input[0] = 0;
                     }
-                    user_input[0] = 0;
+                    subjects_entered--;
                 }
-                subjects_entered--;
             }
-        }
-        else {
+            else {
 
-            Toast myToast = Toast.makeText(getApplicationContext(), "UNDO limit reached. Please RESET!", Toast.LENGTH_SHORT);
+                Toast myToast = Toast.makeText(getApplicationContext(), "UNDO limit reached. Please RESET!", Toast.LENGTH_SHORT);
+                myToast.show();
+            }
+        } catch (Exception toasty) {
+
+            Toast myToast = Toast.makeText(getApplicationContext(), "Cannot undo anymore! PLEASE RESET", Toast.LENGTH_SHORT);
             myToast.show();
         }
-
     }
-
-//    public void getNextHighest() {
-//
-//        for (int i = 0; i < user_six.length-1; i++) {
-//
-//            for (int j = user_input.length-1; j > 0; i++) {
-//
-//                for (int k = 0; k < user_input.length; k++)
-//                {
-//                    Log.e("user_input: ", k + " " + user_input[k]);
-//                }
-//                for (int l = 0; i < user_six.length; l++)
-//                {
-//                    Log.e("user_six: ", l + " " + user_six[l]);
-//                }
-//                if(user_input[j] > user_six[i]) {
-//
-//                    user_six[i] = user_input[j];
-//                    break;
-//                }
-//            }
-//        }
-//    }
 
     public void onButtonTap(View v) {
 
@@ -259,9 +236,16 @@ public class MainActivity extends AppCompatActivity {
                 setViews();
                 break;
             case R.id.HM:
-                bonus = true;
+                if(bonus) {
+
+                    Toast bonusToast = Toast.makeText(getApplicationContext(), "Maths Bonus Already Added!", Toast.LENGTH_SHORT);
+                    bonusToast.show();
+                } else {
+
                 Toast bonusToast = Toast.makeText(getApplicationContext(), "Maths Bonus Added! +25", Toast.LENGTH_SHORT);
                 bonusToast.show();
+                }
+                bonus = true;
                 setViews();
                 break;
 
